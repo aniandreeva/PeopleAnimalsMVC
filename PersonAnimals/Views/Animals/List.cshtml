@@ -1,0 +1,43 @@
+﻿@model PersonAnimals.ViewModels.Animals.AnimalsListVM
+
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Edit")
+</p>
+<table class="table">
+    <tr>
+        <th>Age</th>
+        <th>Person</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Animals) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+           @* @Html.DisplayFor(modelItem => item.Person.FirstName + " " + item.Person.LastName)*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Color)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
