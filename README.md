@@ -1,0 +1,2 @@
+# PeopleAnimalsMVC
+Simple MVC project
